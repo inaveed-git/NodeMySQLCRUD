@@ -1,0 +1,20 @@
+<!-- home.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <!-- Link the CSS file from the public folder -->
+    <link rel="stylesheet" type="text/css" href="/home.css">
+</head>
+<body>
+    <div class="home-container">
+        <h2 class="total-count">The total count is <%= count %></h2>
+        <form action="/user/add" method="get">
+            <button class="join-btn">Join us!</button>
+        </form>
+    </div>
+</body>
+</html>

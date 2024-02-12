@@ -1,0 +1,58 @@
+<!-- users.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Table</title>
+    <!-- Link the CSS file from the public folder -->
+    <link rel="stylesheet" type="text/css" href="/users.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Users Table</h1>
+    </div>
+
+    <div class="search-container">
+        <label for="search">Search:</label>
+        <input type="text" id="search" placeholder="Enter username" oninput="searchUsers()">
+    </div>
+
+    <table class="user-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let user of userss) { %>
+                <tr>
+                    <td><%= user.id %></td>
+                    <td><%= user.username %></td>
+                    <td><%= user.email %></td>
+                    <td>
+                        <form action="/users/<%= user.id %>/edit" method="get">
+                            <button class="action-btn">Edit</button>
+                        </form>
+                        <form method="get" action="/users/<%= user.id %>/delete">
+                            <button class="action-btn">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+
+
+    <script src="/users.js">
+       
+    </script>
+
+
+
+</body>
+</html>

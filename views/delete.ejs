@@ -1,0 +1,27 @@
+<!-- delete.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete User</title>
+    <!-- Link the CSS file from the public folder -->
+    <link rel="stylesheet" type="text/css" href="/delete.css">
+</head>
+<body>
+    <div class="delete-container">
+        <h1>Delete User</h1>
+
+        <form method="POST" action="/users/<%= user.id %>?_method=DELETE" class="delete-form">
+            <label for="username">Username:</label>
+            <textarea name="username" id="username" cols="30" rows="2" readonly><%= user.username %></textarea>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Enter your password">
+
+            <button class="delete-btn">Delete</button>
+        </form>
+    </div>
+</body>
+</html>
